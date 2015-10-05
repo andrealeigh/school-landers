@@ -30,3 +30,43 @@
     -ms-justify-content: center;
     justify-content: center;
 }
+
+/*  global styles  */
+
+body {
+    @include flexbox-display;
+    @include flex-direction-column;
+    background-color: white;
+    color: #2C3E50;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+}
+
+@mixin dark-stripes {
+    color: white;
+    background-color: #2C3E50;
+}
+
+/* section styles */
+
+.sl-hero {
+    @include dark-stripes;
+}
+
+.sl-software {
+
+}
+
+.sl-free-students {
+    @include dark-stripes;
+
+}
+
+.sl-coaching {
+
+}
+
+.sl-footer {
+    @include dark-stripes;
+
+}
