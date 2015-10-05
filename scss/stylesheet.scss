@@ -25,10 +25,22 @@
     flex-direction: row;
 }
 
-@mixin flex-justify-content {
+@mixin flex-justify-content-center {
     -webkit-justify-content: center;
     -ms-justify-content: center;
     justify-content: center;
+}
+
+@mixin flex-justify-content-flex-end {
+    -webkit-justify-content: flex-end;
+    -ms-justify-content: flex-end;
+    justify-content: flex-end;
+}
+
+@mixin flex-justify-content-space-between {
+    -webkit-justify-content: space-between;
+    -ms-justify-content: space-between;
+    justify-content: space-between;
 }
 
 /*  global styles  */
@@ -39,6 +51,8 @@ body {
     background-color: white;
     color: #2C3E50;
     font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
     line-height: 1.5;
 }
 
@@ -47,17 +61,130 @@ body {
     background-color: #2C3E50;
 }
 
+h1 {
+    font-size: 3em;
+    font-weight: 100;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+    font-weight: 100;
+}
+
+h4 {
+    font-size: 1em;
+}
+
+h5 {
+    font-size: .85em;
+    padding-bottom: 3px;
+    padding-top: 10px;
+}
+
+.logo {
+    width: 125px;
+}
+
 /* section styles */
 
-.sl-hero {
+.hero {
     @include dark-stripes;
+    @include flexbox-display;
+    @include flex-direction-column;
+    position: relative;
+    .USA {
+        left: 30px;
+        position: absolute;
+        top: -45px;
+        max-width: 900px;
+    }
+
+    .nav {
+        @include flex-align-items;
+        @include flexbox-display;
+        @include flex-direction-row;
+        @include flex-justify-content-space-between;
+        border-bottom: solid 1px white;
+        padding-bottom: 10px;
+        padding-left: 2.5%;
+        padding-right: 10%;
+        padding-top: 10px;
+        .nav-right-links {
+            a:last-of-type {
+                color: #F7931E;
+                padding-left: 40px;
+            }
+        }
+
+    }
+    .hero-content {
+        @include flex-align-items;
+        @include flexbox-display;
+        @include flex-direction-row;
+        @include flex-justify-content-space-between;
+        padding-bottom: 50px;
+        padding-left: 10%;
+        padding-right: 10%;
+        padding-top: 30px;
+        .tag-line {
+            @include flex-align-items;
+            @include flexbox-display;
+            @include flex-direction-column;
+            .bold {
+                font-weight:700;
+            }
+            .bold-orange {
+                color: #F7931E;
+                font-weight:700;
+            }
+        }
+        .form {
+            @include flexbox-display;
+            @include flex-direction-column;
+            form {
+                margin: 0 auto;
+            }
+            select {
+                background-color: white;
+                border: 10px solid white;
+                box-sizing: content-box;
+                color: #F7931E;
+                font-size: .85em;
+                font-weight: 100;
+                padding: 10px;
+                width: 200px;
+
+            }
+            input {
+                border: 1.5px solid white;
+                border-radius: 5px;
+                padding: 10px;
+                width: 200px;
+
+            }
+            .form-button {
+                background-color: #F7931E;
+                border: solid #F7931E 1px;
+                border-radius: 7px;
+                color: white;
+                padding: 5px;
+                margin: 20px auto 0 auto;
+                text-align: center;
+                width: 100px;
+            }
+        }
+    }
 }
 
-.sl-software {
+.software {
 
 }
 
-.sl-free-students {
+.free-students {
     @include dark-stripes;
 
 }
@@ -66,7 +193,12 @@ body {
 
 }
 
-.sl-footer {
+.footer {
     @include dark-stripes;
+    @include flexbox-display;
+    @include flex-justify-content-flex-end;
+    padding-bottom: 15px;
+    padding-right: 2.5%;
+    padding-top: 15px;
 
 }
