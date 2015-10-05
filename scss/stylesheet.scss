@@ -1,1 +1,32 @@
-/* hey look some styles */
+/* mixins for flexbox cross-browser compatibilty */
+
+@mixin flexbox-display {
+    display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox;  /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+    display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+}
+
+@mixin flex-align-items {
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+}
+
+@mixin flex-direction-column {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+@mixin flex-direction-row {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+@mixin flex-justify-content {
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+}
