@@ -68,6 +68,8 @@ h1 {
 
 h2 {
     font-size: 2em;
+    padding-bottom: 15px;
+    text-align: center;
 }
 
 h3 {
@@ -83,6 +85,14 @@ h5 {
     font-size: .85em;
     padding-bottom: 3px;
     padding-top: 10px;
+}
+
+.bold {
+    font-weight:700;
+}
+.bold-orange {
+    color: #F7931E;
+    font-weight:700;
 }
 
 .logo {
@@ -134,13 +144,6 @@ h5 {
             @include flex-align-items;
             @include flexbox-display;
             @include flex-direction-column;
-            .bold {
-                font-weight:700;
-            }
-            .bold-orange {
-                color: #F7931E;
-                font-weight:700;
-            }
         }
         .form {
             @include flexbox-display;
@@ -181,15 +184,52 @@ h5 {
 }
 
 .software {
+    @include flexbox-display;
+    @include flex-direction-column;
+    padding-bottom: 50px;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 30px;
+    .software-content {
+        @include flexbox-display;
+        @include flex-direction-row;
+        @include flex-justify-content-space-between;
+    }
+    .video {
+        background-color: #E8E6E2;
+        height: 250px;
+        width: 400px;
+    }
+    ul {
+        max-width: 500px;
+        position: relative;
+    }
+    li {
+        padding-bottom: 15px;
+    }
+    li:before {
+        background-image: url('../images/smiley.svg');
+        background-size:contain;
+        content:'';
+        height: 13px;
+        left: -20px;
+        margin-top: 5px;
+        position:absolute;
+        width: 13px;
+    }
+
 
 }
 
 .free-students {
     @include dark-stripes;
+    @include flexbox-display;
+
 
 }
 
 .sl-coaching {
+    @include flexbox-display;
 
 }
 

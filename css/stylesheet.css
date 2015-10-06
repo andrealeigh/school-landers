@@ -24,7 +24,9 @@ h1 {
   font-weight: 100; }
 
 h2 {
-  font-size: 2em; }
+  font-size: 2em;
+  padding-bottom: 15px;
+  text-align: center; }
 
 h3 {
   font-size: 1.5em;
@@ -37,6 +39,13 @@ h5 {
   font-size: .85em;
   padding-bottom: 3px;
   padding-top: 10px; }
+
+.bold {
+  font-weight: 700; }
+
+.bold-orange {
+  color: #F7931E;
+  font-weight: 700; }
 
 .logo {
   width: 125px; }
@@ -125,11 +134,6 @@ h5 {
       -webkit-flex-direction: column;
       -ms-flex-direction: column;
       flex-direction: column; }
-      .hero .hero-content .tag-line .bold {
-        font-weight: 700; }
-      .hero .hero-content .tag-line .bold-orange {
-        color: #F7931E;
-        font-weight: 700; }
     .hero .hero-content .form {
       display: -webkit-box;
       /* OLD - iOS 6-, Safari 3.1-6, BB7 */
@@ -168,9 +172,77 @@ h5 {
         text-align: center;
         width: 100px; }
 
+.software {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  /* NEW, Spec - Firefox, Chrome, Opera */
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 50px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 30px; }
+  .software .software-content {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+    display: flex;
+    /* NEW, Spec - Firefox, Chrome, Opera */
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-justify-content: space-between;
+    -ms-justify-content: space-between;
+    justify-content: space-between; }
+  .software .video {
+    background-color: #E8E6E2;
+    height: 250px;
+    width: 400px; }
+  .software ul {
+    max-width: 500px;
+    position: relative; }
+  .software li {
+    padding-bottom: 15px; }
+  .software li:before {
+    background-image: url("../images/smiley.svg");
+    background-size: contain;
+    content: '';
+    height: 13px;
+    left: -20px;
+    margin-top: 5px;
+    position: absolute;
+    width: 13px; }
+
 .free-students {
   color: white;
-  background-color: #2C3E50; }
+  background-color: #2C3E50;
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  /* NEW, Spec - Firefox, Chrome, Opera */ }
+
+.sl-coaching {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  /* NEW, Spec - Firefox, Chrome, Opera */ }
 
 .footer {
   color: white;
