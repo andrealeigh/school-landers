@@ -7,10 +7,16 @@
     display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
 }
 
-@mixin flex-align-items {
+@mixin flex-align-items-center {
     -webkit-align-items: center;
     -ms-align-items: center;
     align-items: center;
+}
+
+@mixin flex-align-items-baseline {
+    -webkit-align-items: baseline;
+    -ms-align-items: baseline;
+    align-items: baseline;
 }
 
 @mixin flex-direction-column {
@@ -61,6 +67,13 @@ body {
     background-color: #2C3E50;
 }
 
+@mixin section-padding {
+    padding-bottom: 50px;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 30px;
+}
+
 h1 {
     font-size: 3em;
     font-weight: 100;
@@ -78,13 +91,22 @@ h3 {
 }
 
 h4 {
-    font-size: 1em;
+    font-size: 1.5em;
+    padding-bottom: 10px;
+    padding-top: 5px;
 }
 
 h5 {
     font-size: .85em;
     padding-bottom: 3px;
     padding-top: 10px;
+}
+
+p {
+    font-size: 1.15em;
+    font-weight: 100;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .bold {
@@ -114,7 +136,7 @@ h5 {
     }
 
     .nav {
-        @include flex-align-items;
+        @include flex-align-items-center;
         @include flexbox-display;
         @include flex-direction-row;
         @include flex-justify-content-space-between;
@@ -126,58 +148,63 @@ h5 {
         .nav-right-links {
             a:last-of-type {
                 color: #F7931E;
-                padding-left: 40px;
+                margin-left: 40px;
+            }
+            a:hover {
+                color: black;
             }
         }
 
     }
     .hero-content {
-        @include flex-align-items;
+        @include flex-align-items-center;
         @include flexbox-display;
         @include flex-direction-row;
         @include flex-justify-content-space-between;
-        padding-bottom: 50px;
-        padding-left: 10%;
-        padding-right: 10%;
-        padding-top: 30px;
+        @include section-padding;
         .tag-line {
-            @include flex-align-items;
+            @include flex-align-items-center;
             @include flexbox-display;
             @include flex-direction-column;
         }
         .form {
             @include flexbox-display;
             @include flex-direction-column;
-            form {
-                margin: 0 auto;
-            }
-            select {
+        }
+        form {
+            margin: 0 auto;
+        }
+        select {
+            background-color: white;
+            border: 10px solid white;
+            box-sizing: content-box;
+            color: #F7931E;
+            font-size: .85em;
+            font-weight: 100;
+            padding: 10px;
+            width: 200px;
+
+        }
+        input {
+            border: 1.5px solid white;
+            border-radius: 5px;
+            padding: 12px 10px;
+            width: 200px;
+
+        }
+        .form-button {
+            background-color: #F7931E;
+            border: solid #F7931E 2px;
+            border-radius: 7px;
+            color: white;
+            padding: 5px;
+            margin: 20px auto 0 auto;
+            text-align: center;
+            width: 100px;
+            &:hover {
                 background-color: white;
-                border: 10px solid white;
-                box-sizing: content-box;
+                border: solid #F7931E 2px;
                 color: #F7931E;
-                font-size: .85em;
-                font-weight: 100;
-                padding: 10px;
-                width: 200px;
-
-            }
-            input {
-                border: 1.5px solid white;
-                border-radius: 5px;
-                padding: 10px;
-                width: 200px;
-
-            }
-            .form-button {
-                background-color: #F7931E;
-                border: solid #F7931E 1px;
-                border-radius: 7px;
-                color: white;
-                padding: 5px;
-                margin: 20px auto 0 auto;
-                text-align: center;
-                width: 100px;
             }
         }
     }
@@ -186,10 +213,7 @@ h5 {
 .software {
     @include flexbox-display;
     @include flex-direction-column;
-    padding-bottom: 50px;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-top: 30px;
+    @include section-padding;
     .software-content {
         @include flexbox-display;
         @include flex-direction-row;
@@ -217,19 +241,63 @@ h5 {
         position:absolute;
         width: 13px;
     }
-
-
 }
 
 .free-students {
     @include dark-stripes;
     @include flexbox-display;
-
+    @include flex-direction-column;
+    @include section-padding;
+    .free-students-info {
+        @include flexbox-display;
+        @include flex-direction-row;
+        @include flex-align-items-baseline;
+    }
+    .info-column {
+        @include flexbox-display;
+        @include flex-direction-column;
+        @include flex-align-items-center;
+        padding: 20px;
+        max-width: 475px;
+    }
+    .info-icon-left {
+        width: 100px;
+    }
+    .info-icon {
+        width: 50px;
+    }
 
 }
 
-.sl-coaching {
+.coaching {
     @include flexbox-display;
+    @include flex-direction-column;
+    @include section-padding;
+    p {
+        font-size: 1.35em;
+    }
+    p:first-of-type {
+        max-width: 565px;
+    }
+    p:last-of-type {
+        max-width: 445px;
+    }
+    .coaching-button {
+        background-color: #F7931E;
+        border: solid #F7931E 2px;
+        border-radius: 7px;
+        color: white;
+        font-size: 1.15em;
+        padding: 10px;
+        margin: 20px auto;
+        text-align: center;
+        width: 135px;
+        &:hover {
+            background-color: white;
+            border: solid #F7931E 2px;
+            color: #F7931E;
+        }
+    }
 
 }
 
