@@ -73,12 +73,14 @@ p {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  position: relative; }
+  position: relative;
+  z-index: 0; }
   .hero .USA {
     left: 30px;
     position: absolute;
     top: -45px;
-    max-width: 900px; }
+    max-width: 900px;
+    z-index: 1; }
   .hero .nav {
     -webkit-align-items: center;
     -ms-align-items: center;
@@ -101,12 +103,13 @@ p {
     padding-bottom: 10px;
     padding-left: 2.5%;
     padding-right: 10%;
-    padding-top: 10px; }
+    padding-top: 10px;
+    z-index: 2; }
     .hero .nav .nav-right-links a:last-of-type {
       color: #F7931E;
       margin-left: 40px; }
     .hero .nav .nav-right-links a:hover {
-      color: black; }
+      color: #29abe2; }
   .hero .hero-content {
     -webkit-align-items: center;
     -ms-align-items: center;
@@ -128,7 +131,8 @@ p {
     padding-bottom: 50px;
     padding-left: 10%;
     padding-right: 10%;
-    padding-top: 30px; }
+    padding-top: 30px;
+    z-index: 2; }
     .hero .hero-content .tag-line {
       -webkit-align-items: center;
       -ms-align-items: center;
